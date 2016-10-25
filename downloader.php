@@ -5,7 +5,8 @@ $remoteUrl = 'https://wordpress.org/latest.zip';
 
 $filename = basename($remoteUrl);
 
-$ext = end(explode('.', $filename));
+$filenameSplit = explode('.', $filename);
+$ext = end($filenameSplit);
 $size = file_put_contents($filename , fopen($remoteUrl,'r'));
 
 echo 'FileName : ' . $filename . PHP_EOL;
